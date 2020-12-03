@@ -134,6 +134,56 @@ you uploaded the files in step 2).
 
 ---
 
+### 4. Installing using Docker
+
+The application can be installed on any operating system that can run Docker (Mac/Windows/Linux). For this installation method, you won't need to worry about the Apache/PHP/PHP Extensions/MySQL versions and their cross-compatibility. Before installing, make sure your computer or server has the following software:
+
+- Docker
+- Docker Compose
+
+#### Installation Steps
+
+1. Download this repository from Github
+
+2. Launch terminal or PowerShell and run the following commands:
+	
+	**Change the directory to where you downloaded the ORPM repository from Github**
+	
+	Mac/Linux Example:
+	
+	```
+	cd ~/Downloads/online-rental-property-manager/
+	```
+	
+	Windows example:
+	
+	```
+	cd C:\Users\User\Downloads\online-rental-property-manager\
+	```
+
+	**Start up ORPM**
+	
+	Mac, Linux, and Windows w/ Powershell:
+	
+	```
+	docker-compose up -d
+	```
+	
+	**Note**
+	
+	You may edit the `docker-compose.yml` file to change the pre-set version to whichever version you want to use. (e.g. `6.3`)
+
+3. In your web browser, visit `http://server.com/` (change server.com above to the actual domain name or IP address of your server. If you are testing this on the same computer, visit `http://localhost/`
+
+4. You should now see the setup wizard in your browser. When setting up the configuration file for the first time, use the following info: 
+	
+	> MySQL server (host): `orpm-db` <br>
+	Database name: `orpm` <br>
+	MySQL Username: `root` <br>
+	MySQL Password: `password`
+
+---
+
 ## Customization
 
 This application was created using [AppGini](https://bigprof.com/appgini). This means you can easily customize it by

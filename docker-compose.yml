@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  apache:
+    container_name: orpm-main
+    build:
+      context: .
+      args:
+        - VERSION=6.3
+    restart: unless-stopped
+    ports:
+      - 80:80
+    depends_on:
+      - db
+    volumes:
+      - orpm-app:/var/www/html
+  db:
+    container_name: orpm-db
+    image: mariadb:10.3
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    volumes:
+      - orpm-db:/var/lib/mysql
+
+volumes:
+  orpm-app:
+  orpm-db:
